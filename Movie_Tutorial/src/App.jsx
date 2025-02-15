@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import { Route, Routes } from 'react-router-dom'
 import Favorite from './pages/Favorites'
 import NavBar from './Components/NavBar'
+import { MovieProvider } from './context/MovieContext'
 
 
 // this defines a route. when going to /, we show the Home component.
@@ -19,7 +20,7 @@ function App() {
   //const displayMovie = 2;
   return (
     <>
-      <div>
+      <MovieProvider>
         <NavBar />
         <main className='main-content'>
           <Routes>
@@ -35,7 +36,7 @@ function App() {
 
         {/* short circuit way of conditional rendering. Second half is always true because the component does exist. */}
         {/* { displayMovie === 2 && <MovieCard movie={{title: "Second Film", release_date: "2024"}} />    } */}
-      </div>
+      </MovieProvider>
 
 
     </>
